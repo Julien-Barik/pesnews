@@ -1263,6 +1263,106 @@ footer {
   border-color: #D8B56D;
 }
 </style>
+<style>
+/* PESNEWS — International Newsroom */
+
+:root {
+  --premium-bg: #202226;
+  --premium-surface: #292C32;
+  --premium-surface-light: #32363D;
+  --premium-border: #41444B;
+  --premium-text: #F5F3EE;
+  --premium-muted: #B3B6BD;
+  --premium-gold: #D8B56D;
+}
+
+html,
+body {
+  background: var(--premium-bg) !important;
+  color: var(--premium-text);
+}
+
+header,
+nav,
+footer {
+  background-color: #25282D;
+}
+
+header {
+  border-bottom: 1px solid var(--premium-border);
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.035em;
+}
+
+.feature,
+.card {
+  background: var(--premium-surface);
+  border: 1px solid var(--premium-border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+.feature:hover,
+.card:hover {
+  border-color: var(--premium-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .2);
+}
+
+.card-image img,
+.feature-image img {
+  transition: transform .45s ease;
+}
+
+.card:hover .card-image img,
+.feature:hover .feature-image img {
+  transform: scale(1.035);
+}
+
+.card-description,
+.feature p {
+  color: var(--premium-muted);
+  line-height: 1.7;
+}
+
+.category-button {
+  background: var(--premium-surface-light);
+  color: var(--premium-text);
+  border: 1px solid var(--premium-border);
+  border-radius: 999px;
+  transition: background .2s ease, color .2s ease;
+}
+
+.category-button:hover,
+.category-button.active,
+.primary-button {
+  background: var(--premium-gold);
+  border-color: var(--premium-gold);
+  color: var(--premium-bg);
+}
+
+a {
+  transition: color .2s ease;
+}
+
+footer {
+  border-top: 1px solid var(--premium-border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+</style>
 
 </head>
 
