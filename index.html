@@ -1159,15 +1159,42 @@ font-size: 32px;
 }
 
 .news-grid {
-grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.card {
+  border-radius: 10px;
 }
 
 .card-image {
-height: 230px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.card-content {
+  padding: 14px;
+}
+
+.card h3 {
+  font-size: 18px;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.card-description {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.card-meta {
+  margin-top: 12px;
+  padding-top: 10px;
+  gap: 8px;
 }
 
 .section-heading h2 {
-font-size: 22px;
+  font-size: 22px;
 }
 }
   /* PESNEWS — Professional Newsroom Design */
