@@ -440,73 +440,91 @@ nav a:hover { color: var(--accent); }
   font-weight: 900;
   letter-spacing: 1.4px;
 }
-
 .feature {
-  min-height: 350px;
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--panel);
+min-height: 440px;
+display: grid;
+grid-template-columns: 1.2fr 1fr;
+overflow: hidden;
+border: 1px solid #3A3D44;
+border-radius: 16px;
+background: #25282D;
+box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
 }
 
 .feature-image {
-  min-height: 350px;
-  background: #292929;
-  position: relative;
+min-height: 440px;
+background: #292C32;
+position: relative;
+overflow: hidden;
 }
 
 .feature-image img {
-  width: 100%;
-  height: 100%;
-  min-height: 350px;
-  position: absolute;
-  inset: 0;
-  object-fit: cover;
+width: 100%;
+height: 100%;
+min-height: 440px;
+position: absolute;
+inset: 0;
+object-fit: cover;
+transition: transform .6s ease;
+}
+
+.feature:hover .feature-image img {
+transform: scale(1.035);
 }
 
 .feature-copy {
-  padding: 35px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+padding: clamp(28px, 4vw, 52px);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+background: linear-gradient(135deg, #292C32 0%, #202226 100%);
 }
 
 .eyebrow {
-  color: var(--accent);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 1.6px;
-  font-weight: 900;
+color: #D8B56D;
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 2px;
+font-weight: 800;
 }
 
 .feature h1 {
-  font-size: clamp(28px, 4vw, 43px);
-  line-height: 1.12;
-  letter-spacing: -1.5px;
-  margin: 14px 0;
+font-size: clamp(32px, 4vw, 50px);
+line-height: 1.08;
+letter-spacing: -1.7px;
+font-weight: 850;
+margin: 18px 0;
+color: #F5F4F0;
 }
 
 .feature p {
-  color: var(--muted);
-  margin: 0 0 20px;
-  font-size: 15px;
+color: #B7BBC3;
+margin: 0 0 28px;
+font-size: 16px;
+line-height: 1.75;
+max-width: 440px;
 }
 
 .primary-button {
-  display: inline-block;
-  background: var(--accent);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 12px 17px;
-  font-size: 13px;
-  font-weight: 800;
+display: inline-block;
+background: #D8B56D;
+color: #202226;
+border: 1px solid #D8B56D;
+border-radius: 5px;
+padding: 13px 20px;
+font-size: 12px;
+font-weight: 850;
+letter-spacing: 0.8px;
+text-decoration: none;
+transition: background .25s ease, transform .25s ease;
 }
 
-.primary-button:hover { opacity: .85; }
+.primary-button:hover {
+background: #E8CB91;
+border-color: #E8CB91;
+transform: translateY(-2px);
+}
 
 .news-section { padding: 22px 0 55px; }
 
@@ -691,11 +709,31 @@ footer {
 .footer-logo span { color: var(--accent); }
 
 @media (max-width: 850px) {
-  nav { gap: 12px; }
-  .feature { grid-template-columns: 1fr; }
-  .feature-image, .feature-image img { min-height: 240px; }
-  .feature-copy { padding: 25px; }
-  .news-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+nav {
+gap: 12px;
+}
+
+.feature {
+grid-template-columns: 1fr;
+min-height: auto;
+}
+
+.feature-image,
+.feature-image img {
+min-height: 300px;
+}
+
+.feature-copy {
+padding: 32px;
+}
+
+.feature h1 {
+font-size: clamp(32px, 5vw, 44px);
+}
+
+.news-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 }
 
 @media (max-width: 560px) {
@@ -715,7 +753,25 @@ footer {
   .toolbar { align-items: stretch; flex-direction: column; }
   .search { width: 100%; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
-}
+ .feature {
+    border-radius: 12px;
+  }
+
+  .feature-image,
+  .feature-image img {
+    min-height: 220px;
+  }
+
+  .feature h1 {
+    line-height: 1.12;
+    letter-spacing: -1px;
+  }
+
+  .primary-button {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
   </style>
   <style>
   /* PESNEWS — Premium Minimal Design */
@@ -1445,6 +1501,43 @@ background: #D8B56D !important;
 color: #202226 !important;
 border-color: #D8B56D !important;
 }  
+/* Заголовки разделов PESNEWS */
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #3A3D44;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #F5F4F0;
+  font-size: clamp(23px, 3vw, 30px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.section-heading .live {
+  flex-shrink: 0;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+/* Небольшие экраны */
+@media (max-width: 560px) {
+  .section-heading {
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+  }
+
+  .section-heading h2 {
+    font-size: 21px;
+  }
+}
 </style>
 
 </head>
